@@ -24,6 +24,7 @@ int main()
 	settextstyle(50, 0, _T("Consolas"));//Éè¶¨×ÖºÅ¡¢×ÖÌå
 	outtextxy(200, 200, _T("Click to start~"));
 	outtextxy(250, 700, _T("Coded by Syhien"));
+	int score = 0;
 	while (1)
 	{
 		if (MouseHit())
@@ -45,6 +46,7 @@ int main()
 						if (g[i][j] and g[i][j - 1] == g[i][j])
 						{
 							g[i][j - 1] *= 2, g[i][j] = 0;
+							score++;
 							break;
 						}
 					for (int k = 0; k < 3; k++)
@@ -60,6 +62,7 @@ int main()
 						if (g[i][j] and g[i][j + 1] == g[i][j])
 						{
 							g[i][j + 1] *= 2, g[i][j] = 0;
+							score++;
 							break;
 						}
 					for (int k = 0; k < 3; k++)
@@ -75,6 +78,7 @@ int main()
 						if (g[i][j] and g[i - 1][j] == g[i][j])
 						{
 							g[i - 1][j] *= 2, g[i][j] = 0;
+							score++;
 							break;
 						}
 					for (int k = 0; k < 3; k++)
@@ -90,6 +94,7 @@ int main()
 						if (g[i][j] and g[i + 1][j] == g[i][j])
 						{
 							g[i + 1][j] *= 2, g[i][j] = 0;
+							score++;
 							break;
 						}
 					for (int k = 0; k < 3; k++)
@@ -108,6 +113,7 @@ int main()
 						if (g[i][j] and g[i][j - 1] == g[i][j])
 						{
 							g[i][j - 1] *= 2, g[i][j] = 0;
+							score++;
 							break;
 						}
 					for (int k = 0; k < 3; k++)
@@ -123,6 +129,7 @@ int main()
 						if (g[i][j] and g[i][j + 1] == g[i][j])
 						{
 							g[i][j + 1] *= 2, g[i][j] = 0;
+							score++;
 							break;
 						}
 					for (int k = 0; k < 3; k++)
@@ -138,6 +145,7 @@ int main()
 						if (g[i][j] and g[i - 1][j] == g[i][j])
 						{
 							g[i - 1][j] *= 2, g[i][j] = 0;
+							score++;
 							break;
 						}
 					for (int k = 0; k < 3; k++)
@@ -153,6 +161,7 @@ int main()
 						if (g[i][j] and g[i + 1][j] == g[i][j])
 						{
 							g[i + 1][j] *= 2, g[i][j] = 0;
+							score++;
 							break;
 						}
 					for (int k = 0; k < 3; k++)
@@ -176,12 +185,14 @@ int main()
 			{
 				closegraph();
 				cout << "You lose~" << endl;
+				cout << "Your score:" << endl << score << endl;
 				break;
 			}
 			if (win)
 			{
 				closegraph();
 				cout << "You win~" << endl;
+				cout << "Your score:" << endl << score << endl;
 				break;
 			}
 
